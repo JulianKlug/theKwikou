@@ -96,34 +96,34 @@ debris_image = simplegui.load_image("./static/clouds1.png")
 
 # Background
 nebula_info = ImageInfo([400, 300], [800, 600])
-nebula_image = simplegui.load_image("https://www.dropbox.com/s/1wvfaq3nl1kylqb/blueBG.png?dl=1")
+nebula_image = simplegui.load_image("./static/blueBG.png")
 
 # splash image
 splash_info = ImageInfo([200, 150], [400, 300])
-splash_image = simplegui.load_image("https://www.dropbox.com/s/9jztudxx4av4n6o/splash2.png?dl=1")
+splash_image = simplegui.load_image("./static/splash2.png")
 
 # kri image
 ship_info = ImageInfo([45, 45], [90, 90], 35)
-ship_image = simplegui.load_image("https://www.dropbox.com/s/y62ydf5b76jp5im/kri-sheet1-lowres%20black.png?dl=1")
+ship_image = simplegui.load_image("./static/kri-sheet1-lowres black.png")
 
 # twitch image
 twitch_info = ImageInfo([90, 90], [180, 180], 35)
-twitch_image = simplegui.load_image("https://www.dropbox.com/s/cd9knv5i09dg9nw/twitch_sheet%20copy.png?dl=1")
+twitch_image = simplegui.load_image("./static/twitch_sheet copy.png")
 
 # no pants kri image
 nopantskri_info = ImageInfo([45, 45], [90, 90], 45)
-nopantskri_image = simplegui.load_image("https://www.dropbox.com/s/yd0eoyaau3e9h0e/kri-sheet2-lowres%20copy.png?dl=1")
+nopantskri_image = simplegui.load_image("./static/kri-sheet2-lowres copy.png")
 
 # dick image
 dick_info = ImageInfo([90, 90], [180, 180], 30)
-dick_image = simplegui.load_image("https://www.dropbox.com/s/iemghy9n1zn8veg/dick_sheet%20copy.png?dl=1")
+dick_image = simplegui.load_image("./static/dick_sheet copy.png")
 
 # quer images
 quer_info = ImageInfo([64, 64], [128, 128], 64, None, True, 5, 10)
-quer_image = simplegui.load_image("https://www.dropbox.com/s/5gfafpfi4sk2rqs/quer_sprites%20copy.png?dl=1")
+quer_image = simplegui.load_image("./static/quer_sprites copy.png")
 
 # falling
-falling_image = simplegui.load_image("https://www.dropbox.com/s/8hg5kc35nqi4rf9/falling_sheet%20copy.png?dl=1")
+falling_image = simplegui.load_image("./static/falling_sheet copy.png")
 
 # missile image - shot1.png, shot2.png, shot3.png
 missile_info = ImageInfo([5, 5], [10, 10], 3, 55)
@@ -131,14 +131,14 @@ missile_image = simplegui.load_image("http://commondatastorage.googleapis.com/co
 
 # asteroid images = vanilla ice cream
 asteroid_info = ImageInfo([45, 45], [90, 90], 40)
-asteroid_image = simplegui.load_image("https://www.dropbox.com/s/xyy463zcwgo7ukf/mob_spritesheet.png?dl=1")
+asteroid_image = simplegui.load_image("./static/mob_spritesheet.png")
 
 # minion images
 minion_info = ImageInfo([45, 45], [90, 90], 35)
-minion_image = simplegui.load_image("https://www.dropbox.com/s/fjvuklpbhv60z53/minion.png?dl=1")
+minion_image = simplegui.load_image("./static/minion.png")
 
 # bonus image
-bonus_image = simplegui.load_image("https://www.dropbox.com/s/d848id80k1kqzlb/bonus_sheet%20copy.png?dl=1")
+bonus_image = simplegui.load_image("./static/bonus_sheet copy.png")
 
 # animated explosion - explosion_orange.png, explosion_blue.png, explosion_blue2.png, explosion_alpha.png
 explosion_info = ImageInfo([64, 64], [128, 128], 17, 24, True)
@@ -153,7 +153,7 @@ explosion_list = [explosion_image1, explosion_image1, explosion_image2, explosio
 
 # sound assets purchased from sounddogs.com, please do not redistribute
 # .ogg versions of sounds are also available, just replace .mp3 by .ogg
-soundtrack = simplegui.load_sound("https://www.dropbox.com/s/y19kvhpvre7gcv5/Sprite%20Creation.mp3?dl=1")
+soundtrack = simplegui.load_sound("./static/Sprite Creation.mp3")
 missile_sound = simplegui.load_sound(
     "http://commondatastorage.googleapis.com/codeskulptor-assets/sounddogs/missile.mp3")
 missile_sound.set_volume(.5)
@@ -372,7 +372,7 @@ def process_sprite_group(canvas, set):
         l[i].draw(canvas)
         l[i].update()
         if l[i].update():
-            set.pop(i)
+            set.remove(l[i])
 
 
 def newgame():
@@ -635,7 +635,7 @@ def button_handler4():
 
 # initialize stuff
 frame = simplegui.create_frame("Kwikou", WIDTH, HEIGHT)
-label = frame.add_label('Difficulty : ', 200)
+label = frame.add_label('Difficulty : 200')
 label = frame.add_label(' ')
 button1 = frame.add_button('Antoine', button_handler1)
 label = frame.add_label(' ')
